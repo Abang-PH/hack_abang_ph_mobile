@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hack_abang_ph_mobile/screens/tabs/for_hire_tab.dart';
+import 'package:hack_abang_ph_mobile/screens/tabs/messsage_tab.dart';
 import 'package:hack_abang_ph_mobile/screens/tabs/pick_up_tab.dart';
 import 'package:hack_abang_ph_mobile/screens/tabs/maps_tab.dart';
 import 'package:hack_abang_ph_mobile/screens/tabs/vehichles_tab.dart';
@@ -17,14 +18,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedTab = 0;
   static const List<Widget> _pages = <Widget>[
-   /* MapTab(),*/
     VehicleTab(),
     PickUpTab(),
     ForHireTab(),
-    Icon(
-      Icons.book,
-      size: 150,
-    ),
+    MessageTab(),
   ];
 
   @override
@@ -123,8 +120,8 @@ class _HomeScreenState extends State<HomeScreen> {
             label: "For Hire",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: "Booking",
+            icon: Icon(Icons.message),
+            label: "Message",
           ),
         ],
       ),

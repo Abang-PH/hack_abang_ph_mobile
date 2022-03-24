@@ -450,7 +450,7 @@ class _VehicleDetails extends StatelessWidget {
                         Row(
                           children: [
                             Icon(
-                              Icons.car_repair,
+                              Icons.check_circle,
                               color: Colors.green,
                               size: 17.0,
                             ),
