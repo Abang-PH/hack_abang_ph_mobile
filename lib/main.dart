@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hack_abang_ph_mobile/screens/login_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:hack_abang_ph_mobile/screens/driver_list_screen.dart';
 import 'package:hack_abang_ph_mobile/screens/driver_profile_screen.dart';
@@ -16,15 +17,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: /*UIThemeColors.YELLOW1*/ Colors.amber,
+        primaryColor: /*UIThemeColors.YELLOW1*/ Colors.green,
         fontFamily: UIFontStyles.POPPINS,
       ),
-      initialRoute: HomeScreen.routeName,
+      initialRoute: LoginScreen.routeName,
       routes: {
         HomeScreen.routeName: (context) => const HomeScreen(),
         MapRouteScreen.routeName: (context) => const MapRouteScreen(),
         DriverListScreen.routeName: (context) => const DriverListScreen(),
         DriverProfileScreen.routeName: (context) => const DriverProfileScreen(),
+        LoginScreen.routeName: (context) =>  LoginScreen(),
       },
     );
   }

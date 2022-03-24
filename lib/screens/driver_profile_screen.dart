@@ -20,123 +20,221 @@ class _DriverProfileScreenState extends State<DriverProfileScreen> {
         title: Text("Driver Profile"),
         backgroundColor: Colors.green,
       ),
-      body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10.0),
-        child: Column(
-          children: [
-            SizedBox(height: 10.0),
-            Container(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Driver Information",
-                  style: TextStyle(
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )),
-            Container(
-              child: _DriverProfile(
-                name: "John Rev Puno",
-                imagePath: "assets/images/jrev.png",
-                starRating: 4.5,
-              ),
-            ),
-            SizedBox(height: 30.0),
-            Container(
+   //   floatingActionButton:
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
                 children: [
+                  SizedBox(height: 10.0),
                   Container(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        "Vehicle Information",
+                        "Driver Information",
                         style: TextStyle(
                           fontSize: 15.0,
                           fontWeight: FontWeight.bold,
                         ),
                       )),
+                  Container(
+                    child: _DriverProfile(
+                      name: "John Doe",
+                      imagePath: "assets/images/jrev.png",
+                      starRating: 4.5,
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 60,
+                          height: 60,
+                          child: Icon(Icons.add_call, size: 20,),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color(0xFFe0f2f1)),
+                        ),
+                        SizedBox(width: 30),
+                        Container(
+                          width: 60,
+                          height: 60,
+                          child: Icon(Icons.message, size: 20,),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color(0xFFe0f2f1)),
+                        ),
+                      ],
+                    ),
+                  ),
                   SizedBox(height: 10.0),
                   Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding:
-                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(3.0),
-                        border:
-                            Border.all(color: Colors.grey[400] ?? Colors.grey)),
                     child: Column(
                       children: [
-                        Row(
-                          children: [
-                            Expanded(flex: 3, child: Text("Vehicle Type:")),
-                            Expanded(flex: 5, child: Text(" Taxi - Vios"))
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Expanded(flex: 3, child: Text("Plate No:")),
-                            Expanded(flex: 5, child: Text(" NCR 1234"))
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Expanded(flex: 3, child: Text("Seats:")),
-                            Expanded(flex: 5, child: Text("20"))
-                          ],
+                        Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Vehicle Information",
+                              style: TextStyle(
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )),
+                        SizedBox(height: 10.0),
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          padding:
+                              EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                          decoration: BoxDecoration(
+                              color: Colors.grey[200],
+                              borderRadius: BorderRadius.circular(3.0),
+                              border:
+                                  Border.all(color: Colors.grey[400] ?? Colors.grey)),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Expanded(flex: 3, child: Text("Vehicle Type:")),
+                                  Expanded(flex: 5, child: Text(" Taxi - Vios"))
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Expanded(flex: 3, child: Text("Plate No:")),
+                                  Expanded(flex: 5, child: Text(" NCR 1234"))
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Expanded(flex: 3, child: Text("Seats:")),
+                                  Expanded(flex: 5, child: Text("20"))
+                                ],
+                              )
+                            ],
+                          ),
                         )
                       ],
                     ),
-                  )
+                  ),
+                  SizedBox(height: 20.0),
+                  Container(
+                    child: Column(
+                      children: [
+                        Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Trip Information",
+                              style: TextStyle(
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )),
+                        SizedBox(height: 10.0),
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          padding:
+                          EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                          decoration: BoxDecoration(
+                              color: Colors.grey[200],
+                              borderRadius: BorderRadius.circular(3.0),
+                              border:
+                              Border.all(color: Colors.grey[400] ?? Colors.grey)),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Expanded(flex: 3, child: Text("Origin: ")),
+                                  Expanded(flex: 5, child: Text("Shaw Boulivard"))
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Expanded(flex: 3, child: Text("Destination: ")),
+                                  Expanded(flex: 5, child: Text("Antipolo"))
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Expanded(flex: 3, child: Text("Price:")),
+                                  Expanded(flex: 5, child: Text("300.0 php"))
+                                ],
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Container(
+                    child: Column(
+                      children: [
+                        Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Passenger Feedback",
+                              style: TextStyle(
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )),
+                        SizedBox(height: 10.0),
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          // padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
+                          child: Column(
+                            children: [
+                              _CustomerFeedback(
+                                name: "Mark Estopace",
+                                starRating: 5.0,
+                                imagePath: "assets/images/mark.png",
+                                comment: "Magaling kumambyo, PAK NA PAK!",
+                              ),
+                              _CustomerFeedback(
+                                name: "Justine Nicole",
+                                starRating: 5.0,
+                                imagePath: "assets/images/nicole.png",
+                                comment:
+                                    "Sobrang bait and accomodating sa aming mga turista !!!",
+                              ),
+                              /*_CustomerFeedback(
+                                name: "Denver Dalman",
+                                starRating: 5.0,
+                                imagePath: "assets/images/denver.png",
+                                comment:
+                                    "Very punctual and knowledgable dito sa isabela",
+                              ),*/
+                              SizedBox(height: 50.0)
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+
                 ],
               ),
             ),
-            SizedBox(height: 30.0),
-            Container(
-              child: Column(
-                children: [
-                  Container(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Passenger Feedback",
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      )),
-                  SizedBox(height: 10.0),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    // padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
-                    child: Column(
-                      children: [
-                        _CustomerFeedback(
-                          name: "Mark Estopace",
-                          starRating: 5.0,
-                          imagePath: "assets/images/mark.png",
-                          comment: "Magaling kumambyo, PAK NA PAK!",
-                        ),
-                        _CustomerFeedback(
-                          name: "Justine Nicole",
-                          starRating: 5.0,
-                          imagePath: "assets/images/nicole.png",
-                          comment:
-                              "Sobrang bait and accomodating sa aming mga turista !!!",
-                        ),
-                        _CustomerFeedback(
-                          name: "Denver Dalman",
-                          starRating: 5.0,
-                          imagePath: "assets/images/denver.png",
-                          comment:
-                              "Very punctual and knowledgable dito sa isabela",
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+                color: Colors.green,
+                width: double.infinity,
+                child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "BOOK NOW",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                      ),
+                    ))),
+          ),
+        ],
       ),
     );
   }

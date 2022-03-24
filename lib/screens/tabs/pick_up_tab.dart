@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hack_abang_ph_mobile/screens/driver_list_screen.dart';
+import 'package:hack_abang_ph_mobile/screens/driver_profile_screen.dart';
 import 'package:hack_abang_ph_mobile/screens/map_route_screen.dart';
 import 'package:hack_abang_ph_mobile/utilities/asset_paths.dart';
 import 'package:hack_abang_ph_mobile/utilities/theme.dart';
@@ -139,9 +140,13 @@ class _PickUpTabState extends State<PickUpTab> {
                             children: [
                               _VehicleDetails(
                                 name: "John Doe",
-                                funcClick: () {},
+                                funcClick: () {
+                                  Navigator.pushNamed(context, DriverProfileScreen.routeName);
+
+                                },
                                 imagePath: "assets/images/taxi1.png",
-                                funcViewProfile: () {},
+                                funcViewProfile: () {
+                                },
                                 vehicleModel: "Vios",
                               ),
                               _VehicleDetails(
@@ -368,7 +373,7 @@ class _VehicleDetails extends StatelessWidget {
     return GestureDetector(
       onTap: () => funcClick(),
       child: Container(
-        margin: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
+        margin: EdgeInsets.only( top: 10.0),
         decoration: BoxDecoration(
             color: Colors.grey[300],
             borderRadius: BorderRadius.circular(3.0),
