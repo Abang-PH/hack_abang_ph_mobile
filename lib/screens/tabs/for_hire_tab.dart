@@ -65,14 +65,14 @@ class _ForHireTabState extends State<ForHireTab> {
           _ForHireInfo(
             funcClick: () {},
             imagePath: "assets/images/wigo1.png",
-            name: "HI ACE",
+            name: "WIGO",
             owner: "John Rev",
             location: "Isabela",
           ),
           _ForHireInfo(
             funcClick: () {},
             imagePath: "assets/images/adventure1.png",
-            name: "HI ACE",
+            name: "ADVENTURE",
             owner: "Sigfried",
             location: "Isabela",
           ),
