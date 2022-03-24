@@ -17,7 +17,7 @@ class _DriverProfileScreenState extends State<DriverProfileScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Driver Profile"),
+        title: Text("Details"),
         backgroundColor: Colors.green,
       ),
    //   floatingActionButton:
@@ -352,6 +352,20 @@ class _DriverProfile extends StatelessWidget {
                       SizedBox(width: 5.0),
                       Text(
                         starRating.toString(),
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.contact_phone_outlined,
+                        color: Colors.orange,
+                        size: 17.0,
+                      ),
+                      SizedBox(width: 5.0),
+                      Text(
+                        "09153854265",
                         style: TextStyle(fontSize: 12.0),
                       ),
                     ],

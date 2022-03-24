@@ -48,6 +48,7 @@ class _PickUpTabState extends State<PickUpTab> {
                     SizedBox(width: 10.0),
                     Expanded(
                       child: TextField(
+                        controller: TextEditingController(text: "Binangonan"),
                         decoration: new InputDecoration(
                           contentPadding: EdgeInsets.symmetric(
                               horizontal: 10.0, vertical: 0.0),
@@ -75,6 +76,7 @@ class _PickUpTabState extends State<PickUpTab> {
                     SizedBox(width: 10.0),
                     Expanded(
                       child: TextField(
+                        controller: TextEditingController(text: "Shaw Boulivard"),
                         decoration: new InputDecoration(
                           contentPadding: EdgeInsets.symmetric(
                               horizontal: 10.0, vertical: 0.0),

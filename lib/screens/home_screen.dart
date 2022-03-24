@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hack_abang_ph_mobile/screens/tabs/for_hire_tab.dart';
 import 'package:hack_abang_ph_mobile/screens/tabs/pick_up_tab.dart';
 import 'package:hack_abang_ph_mobile/screens/tabs/maps_tab.dart';
 import 'package:hack_abang_ph_mobile/screens/tabs/vehichles_tab.dart';
@@ -19,10 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
    /* MapTab(),*/
     VehicleTab(),
     PickUpTab(),
-    Icon(
-      Icons.chat,
-      size: 150,
-    ),
+    ForHireTab(),
     Icon(
       Icons.book,
       size: 150,
@@ -121,8 +119,8 @@ class _HomeScreenState extends State<HomeScreen> {
             label: "Pick-Up",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: "Chats",
+            icon: Icon(Icons.car_repair),
+            label: "For Hire",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.book),
