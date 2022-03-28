@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hack_abang_ph_mobile/screens/login_screen.dart';
+import 'package:hack_abang_ph_mobile/areas/login_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:hack_abang_ph_mobile/screens/driver_list_screen.dart';
-import 'package:hack_abang_ph_mobile/screens/driver_profile_screen.dart';
-import 'package:hack_abang_ph_mobile/screens/home_screen.dart';
-import 'package:hack_abang_ph_mobile/screens/map_route_screen.dart';
+import 'package:hack_abang_ph_mobile/areas/driver_list_screen.dart';
+import 'package:hack_abang_ph_mobile/areas/driver_profile_screen.dart';
+import 'package:hack_abang_ph_mobile/areas/home_screen.dart';
+import 'package:hack_abang_ph_mobile/areas/map_route_screen.dart';
 import 'package:hack_abang_ph_mobile/utilities/theme.dart';
 
 Future<void> main() async {
