@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:hack_abang_ph_mobile/areas/home_screen.dart';
-import 'package:hack_abang_ph_mobile/utilities/asset_paths.dart';
-import 'package:hack_abang_ph_mobile/utilities/theme.dart';
 
 class LoginScreen extends StatefulWidget {
   static final routeName = "/login_screen";

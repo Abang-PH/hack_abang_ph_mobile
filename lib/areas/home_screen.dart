@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hack_abang_ph_mobile/areas/for_hire/for_hire_tab.dart';
 import 'package:hack_abang_ph_mobile/areas/tabs/message_tab.dart';
 import 'package:hack_abang_ph_mobile/areas/tabs/pick_up_tab.dart';
-import 'package:hack_abang_ph_mobile/areas/tabs/maps_tab.dart';
 import 'package:hack_abang_ph_mobile/areas/tabs/vehichles_tab.dart';
 import 'package:hack_abang_ph_mobile/utilities/theme.dart';
 
@@ -88,49 +87,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-            /*  TopContainer(
-                height: 100,
-                width: double.infinity,
-                child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Container(
-                              child: Text(
-                                "Abang.ph",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  fontSize: 22.0,
-                                  color: Colors.white,
-                                  fontFamily: UIFontStyles.MONTSERRAT_BOLD,
-                                  fontWeight: FontWeight.w800,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              child: Text(
-                                "by Abangers",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  fontSize: 12.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  )
-                ]),
-              ),*/
               Container(child: _pages.elementAt(_selectedTab)),
             ],
           ),
@@ -140,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 3.0,
         currentIndex: _selectedTab,
         onTap: _onItemTapped,
-        selectedItemColor: Colors.green,
+        selectedItemColor: Theme.of(context).primaryColor,
         selectedFontSize: 17.0,
         selectedIconTheme: IconThemeData(size: 28.0),
         unselectedItemColor: Colors.grey,
@@ -190,7 +146,7 @@ class TopContainer extends StatelessWidget {
     return Container(
       padding: padding != null ? padding : EdgeInsets.symmetric(horizontal: 20.0),
       decoration: BoxDecoration(
-          color: Colors.green,
+          color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(40.0),
             bottomLeft: Radius.circular(40.0),

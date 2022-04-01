@@ -2,7 +2,7 @@ import 'dart:ui' show Color;
 import 'package:flutter/material.dart';
 
 class UIThemeColors {
-  static const Color YELLOW1 = Color(0xFFF9BE7C);
+  static const Color COLOR_MAIN = Color(0xFFFC6A03);
   static const Color RED_PRIMARY = Colors.red;
   static const Color black = Color(0xFF000000);
   static const Color white = Color(0xFFFFFFFF);

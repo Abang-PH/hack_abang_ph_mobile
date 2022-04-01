@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: /*UIThemeColors.YELLOW1*/ Colors.green,
+        primaryColor: UIThemeColors.COLOR_MAIN,
         fontFamily: UIFontStyles.POPPINS,
       ),
       initialRoute: LoginScreen.routeName,
