@@ -119,31 +119,97 @@ class _ForHireInfo extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
-            Row(
-              children: [
-                Column(
+            SizedBox(height: 10.0),
+            Container(
+              padding: EdgeInsets.only(bottom: 20.0, left: 20.0, right: 10.0),
+
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                Text(name,
+                    style: TextStyle(
+                      color: Colors.green[700],
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    )),
+                Row(
                   children: [
-                    Padding(
-                      padding: EdgeInsets.all(16.0),
+                    Expanded(
+                      flex: 1,
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(name,
-                              style: TextStyle(
-                                fontSize: 17.0,
-                                fontWeight: FontWeight.bold,
-                              )),
-                          Row(
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(location, style: TextStyle(fontSize: 13.0)),
-                              Icon(Icons.pin_drop),
+                              Row(
+                                children: [
+                                  Text(location, style: TextStyle(fontSize: 13.0)),
+                                  Icon(Icons.pin_drop),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text("Owner: ", style: TextStyle(fontSize: 13.0)),
+                                  Text(owner, style: TextStyle(fontSize: 13.0)),
+                                ],
+                              ),
                             ],
                           ),
-                          Row(
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Column(
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Owner: ", style: TextStyle(fontSize: 13.0)),
-                              Text(owner, style: TextStyle(fontSize: 13.0)),
+                              Row(
+                                children: [
+                                  Text("CP No: ", style: TextStyle(fontSize: 13.0)),
+                                  Text("09786525665",
+                                      style: TextStyle(fontSize: 13.0)),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.check_circle,
+                                    color: Colors.green,
+                                    size: 15.0,
+                                  ),
+                                  SizedBox(width: 10.0),
+                                  Text("LGU Verified",
+                                      style: TextStyle(fontSize: 13.0)),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text("Ratings: ",
+                                      style: TextStyle(fontSize: 13.0)),
+                                  RatingBar.builder(
+                                    itemSize: 15.0,
+                                    initialRating: starRating,
+                                    minRating: 1,
+                                    direction: Axis.horizontal,
+                                    allowHalfRating: true,
+                                    itemCount: 5,
+                                    itemPadding:
+                                    EdgeInsets.symmetric(horizontal: 0.0),
+                                    itemBuilder: (context, _) =>
+                                        Icon(
+                                          Icons.star,
+                                          color: Colors.amber,
+                                        ),
+                                    onRatingUpdate: (rating) {
+                                      print(rating);
+                                    },
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ],
@@ -151,64 +217,9 @@ class _ForHireInfo extends StatelessWidget {
                     ),
                   ],
                 ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Text("CP No: ", style: TextStyle(fontSize: 13.0)),
-                              Text("09786525665",
-                                  style: TextStyle(fontSize: 13.0)),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.check_circle,
-                                color: Colors.green,
-                                size: 15.0,
-                              ),
-                              SizedBox(width: 10.0),
-                              Text("LGU Verified",
-                                  style: TextStyle(fontSize: 13.0)),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Text("Ratings: ",
-                                  style: TextStyle(fontSize: 13.0)),
-                              RatingBar.builder(
-                                itemSize: 15.0,
-                                initialRating: starRating,
-                                minRating: 1,
-                                direction: Axis.horizontal,
-                                allowHalfRating: true,
-                                itemCount: 5,
-                                itemPadding:
-                                EdgeInsets.symmetric(horizontal: 0.0),
-                                itemBuilder: (context, _) =>
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.amber,
-                                    ),
-                                onRatingUpdate: (rating) {
-                                  print(rating);
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+              ],),
             ),
+
           ],
         ),
       ),
