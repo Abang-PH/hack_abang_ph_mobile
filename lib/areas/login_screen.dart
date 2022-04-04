@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hack_abang_ph_mobile/areas/home_screen.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 class LoginScreen extends StatefulWidget {
   static final routeName = "/login_screen";
@@ -22,70 +23,77 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
-      body: Container(
-        //color: Theme.of(context).primaryColor,
-        child: SafeArea(
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 30.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(width: 200.0,
-                      height: 200.0,
-                      child: Image.asset("assets/images/abang_logo1.png")),
-                  // SizedBox(height: 20.0),
-                  SizedBox(height: 20.0),
-                  Column(
-                    children: <Widget>[
-                      /*_TextInputUserName(
-                    controller: _conUserName,
-                  ),
-                  SizedBox(height: 20.0),
-                  _TextInputPassword(
-                    showPassword: _showPassword,
-                    controller: _conPassword,
-                    funcShowPassword: () {
-                      setState(() {
-                        _showPassword = !_showPassword;
-                      });
-                    },
-                  ),*/
-                      _TextInput(
-                        placeholder: "Username",
-                        prefixIcon: Icon(Icons.person),
-                      ),
-                      SizedBox(
-                        height: 20.0,
-                      ),
-                      _TextInput(
-                        placeholder: "Password",
-                        prefixIcon: Icon(Icons.lock),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 10.0),
-                  SizedBox(height: 10.0),
-                  _ButtonLogin(
-                    function: () {
-                      Navigator.of(context).pushNamed(HomeScreen.routeName);
-                    },
-                  ),
-                  SizedBox(height: 20.0),
-                  Container(
-                    child: FlatButton(
+      backgroundColor: Colors.grey[300],
+      body: SafeArea(
+          child: Card(
+        elevation: 3.0,
+        margin: EdgeInsets.symmetric(horizontal: 40.0, vertical: 70.0),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 0.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                  width: 150.0,
+                  height: 150.0,
+                  child: Image.asset("assets/images/abang_logo1.png")),
+              _TextInput(
+                placeholder: "Username",
+                prefixIcon: Icon(Icons.person),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              _TextInput(
+                placeholder: "Password",
+                prefixIcon: Icon(Icons.lock),
+              ),
+              SizedBox(height: 15.0),
+              _ButtonLogin(
+                function: () {
+                  Navigator.of(context).pushNamed(HomeScreen.routeName);
+                },
+              ),
+              SizedBox(height: 5.0),
+              Container(
+                child: FlatButton(
+                  onPressed: () {
+                    // Navigator.of(context).pushNamed(RegisterScreen.routeName);
+                  },
+                  child: Text("Register", style: TextStyle(color: Colors.blue)),
+                ),
+              ),
+              Text("- OR -"),
+              SizedBox(height: 10.0),
+              Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: SignInButton(
+                      Buttons.Google,
+                      text: "Google",
                       onPressed: () {
-                        // Navigator.of(context).pushNamed(RegisterScreen.routeName);
+                        //_showButtonPressDialog(context, 'Google');
                       },
-                      child: Text(
-                          "Register", style: TextStyle(color: Colors.blue)),
                     ),
                   ),
-                  SizedBox(height: 10.0),
+                  SizedBox(width: 10.0),
+                  Expanded(
+                    flex: 1,
+                    child: SignInButton(
+                      Buttons.Facebook,
+                      text: "Facebook",
+                      onPressed: () {
+                        //_showButtonPressDialog(context, 'Google');
+                      },
+                    ),
+                  ),
                 ],
-              ),
-            )),
-      ),
+              )
+            ],
+          ),
+        ),
+      )),
     );
   }
 }
@@ -103,15 +111,11 @@ class _ButtonLogin extends StatelessWidget {
       child: RaisedButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5.0),
-          side: BorderSide(color: Theme
-              .of(context)
-              .primaryColor),
+          side: BorderSide(color: Theme.of(context).primaryColor),
         ),
         onPressed: () => function(),
         padding: EdgeInsets.all(10.0),
-        color: Theme
-            .of(context)
-            .primaryColor,
+        color: Theme.of(context).primaryColor,
         child: Text(
           "Login",
           style: TextStyle(
@@ -129,8 +133,7 @@ class _TextInput extends StatelessWidget {
   final String placeholder;
   final Widget prefixIcon;
 
-  _TextInput(
-      {required this.placeholder,  required this.prefixIcon});
+  _TextInput({required this.placeholder, required this.prefixIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -141,8 +144,8 @@ class _TextInput extends StatelessWidget {
           color: Colors.grey,
         ),
         decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(
-                horizontal: 10.0, vertical: 0.0),
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 10.0, vertical: 0.0),
             filled: true,
             fillColor: Colors.white,
             hintStyle: TextStyle(
@@ -151,11 +154,15 @@ class _TextInput extends StatelessWidget {
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.0),
                 borderSide: BorderSide(
-                    color: Colors.grey[400] ?? Colors.grey, width: 1.0, style: BorderStyle.solid)),
+                    color: Colors.grey[400] ?? Colors.grey,
+                    width: 1.0,
+                    style: BorderStyle.solid)),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.0),
                 borderSide: BorderSide(
-                    color: Colors.grey[400] ?? Colors.grey, width: 1.0, style: BorderStyle.solid)),
+                    color: Colors.grey[400] ?? Colors.grey,
+                    width: 1.0,
+                    style: BorderStyle.solid)),
             hintText: placeholder));
   }
 }
